@@ -19,3 +19,24 @@ describe('Nav component', () => {
         expect(asFragment()).toMatchSnapshot();
     });
 });
+
+//Create a test for emoji visibility 
+describe('emoji is visible', () => {
+    it('inserts emoji into the h2', () => {
+        // Arrange
+        const { getByLabelText } = render(<Nav />);
+
+        // Assert
+        expect(getByLabelText('camera')).toHaveTextContent('📸');  
+    });
+}) 
+
+//Create a test for link visibility
+// describe('links are visible', () => {
+//     it('inserts text into the links', () => {
+//       const { getByTestId } = render(<Nav />);
+
+//       expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
+//       expect(getByTestId('about')).toHaveTextContent('About me');
+//     });
+// })
